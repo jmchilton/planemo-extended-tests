@@ -14,11 +14,11 @@ env:
 
 install:
   - pip install tox coveralls
+  - git clone https://github.com/galaxyproject/planemo.git
+  - cd planemo
 
-script: 
- - git clone https://github.com/galaxyproject/planemo.git
- - cd planemo
- - tox -e $TOX_ENV
+script:
+  - tox -e $TOX_ENV
 
 services:
   - postgresql
