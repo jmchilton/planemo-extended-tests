@@ -7,6 +7,8 @@ env:
     - TOX_ENV=py27-gx-1805
     - TOX_ENV=py34-gx-1801
     - TOX_ENV=py34-gx-dev
+    - DOCS=building TOX_ENV=doc-test
+    - DOCS=building_cwl TOX_ENV=doc-test
     - DOCS=conda_cwl TOX_ENV=doc-test
     - DOCS=conda TOX_ENV=doc-test
     - DOCS=docker TOX_ENV=doc-test
