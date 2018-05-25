@@ -1,0 +1,25 @@
+language: python
+sudo: true
+python: 2.7
+env:
+  global: []
+  matrix:
+    - TOX_ENV=py27-gx-1805
+    - TOX_ENV=py34-gx-1801
+    - TOX_ENV=py34-gx-dev
+    - DOCS=conda_cwl TOX_ENV=doc-test
+    - DOCS=conda TOX_ENV=doc-test
+    - DOCS=docker TOX_ENV=doc-test
+    - DOCS=docker_cwl TOX_ENV=doc-test
+
+install:
+  - pip install tox coveralls
+
+script: 
+ - git clone https://github.com/galaxyproject/planemo.git
+ - cd planemo
+ - tox -e $TOX_ENV
+
+services:
+  - postgresql
+  - docker
